@@ -1,0 +1,8 @@
+{
+  "some-key": [
+    {
+      "type": 0,
+      "value": "some-value"
+    }
+  ]
+}

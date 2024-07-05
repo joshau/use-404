@@ -1,8 +1,10 @@
-"use client";
-
-import { use } from "react";
+import ClientComponent from "@/components/ClientComponent";
+import { Suspense } from "react";
 
 export default function NotFound() {
-  const thing = use(new Promise((resolve) => resolve("ok!")));
-  return <>not found! - {thing}</>;
+  const dynamicLanguage = import('@/languages/en-us.json')
+
+  return <Suspense>
+    <ClientComponent dynamicLanguage={dynamicLanguage} />
+  </Suspense>
 }
