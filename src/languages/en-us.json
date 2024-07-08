@@ -1,8 +1,4 @@
 {
-  "some-key": [
-    {
-      "type": 0,
-      "value": "some-value"
-    }
-  ]
+  "hello-world": "Hello, world!",
+  "not-found": "Not Found!"
 }

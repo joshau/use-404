@@ -1,13 +1,8 @@
 "use client";
 
-import { useEffect, use } from "react";
+import { useDictionary } from "@/hooks/useDictionary";
 
-export default function ClientComponent({ dynamicLanguage }: { dynamicLanguage: Promise<any> }) {
-  const language = use(dynamicLanguage);
-
-  useEffect(() => {
-    console.log("ClientComponent mounted");
-  }, []);
-
-  return <div>not found! - {language}</div>;
+export default function ClientComponent() {
+  const dictionary = useDictionary()
+  return <div>{dictionary['not-found']}</div>;
 }
