@@ -7,16 +7,16 @@ import LocaleProvider from "@/providers/LocaleProvider";
 
 interface ClientLayoutProps {
   locale: string;
-  filteredPromise?: Promise<Record<string, string>>;
+  dictionaryPromise?: Promise<Record<string, string>>;
 }
 
 export function ClientLayout({
   children,
   locale,
-  filteredPromise,
+  dictionaryPromise,
 }: PropsWithChildren<ClientLayoutProps>) {
   return (
-    <LocaleProvider filteredPromise={filteredPromise} locale={locale}>
+    <LocaleProvider dictionaryPromise={dictionaryPromise} locale={locale}>
       <AnotherProvider>{children}</AnotherProvider>
     </LocaleProvider>
   );

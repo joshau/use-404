@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo } from "react";
 
 export interface LocaleContextInterface {
-  filteredPromise?: Promise<Record<string, string>>;
+  dictionaryPromise?: Promise<Record<string, string>>;
   locale: string;
 }
 
@@ -17,15 +17,15 @@ export function useLocale() {
 
 export default function LocaleProvider({
   children,
-  filteredPromise,
+  dictionaryPromise,
   locale,
 }: React.PropsWithChildren<{
-  filteredPromise?: Promise<Record<string, string>>;
+  dictionaryPromise?: Promise<Record<string, string>>;
   locale: string;
 }>): React.ReactElement {
   const contextValue = useMemo(
-    () => ({ filteredPromise, locale }),
-    [filteredPromise, locale]
+    () => ({ dictionaryPromise, locale }),
+    [dictionaryPromise, locale],
   );
 
   return (
